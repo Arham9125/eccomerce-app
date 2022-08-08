@@ -5,8 +5,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project/screen1.dart';
 import 'package:project/Screen2.dart';
-import 'package:project/screen%202.0.dart';
+
 import 'package:project/screen1.dart';
+import 'package:project/screen3.dart';
 import 'package:project/widgets/homewidget.dart';
 
 import 'package:project/widgets/textwidget.dart';
@@ -17,7 +18,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List tabs = [Screen1(), Screen2(), Screen1(), Screen2()];
+  List tabs = [Screen1(),
+   Screen2(),
+    Screen1(), 
+      Screen3(),
+      ];
 
   var _currentindex = 0;
 

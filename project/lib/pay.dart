@@ -40,6 +40,7 @@ class Pay extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(right: 2, left: 0),
                 child: Smalltextc(
+                  
                   text: """
         Your order will be ready in 5 days, \n 
     including shipping, more details and \n
@@ -48,6 +49,7 @@ class Pay extends StatelessWidget {
                         
                         
                            Thanks!!!""",
+                         clr:  Colors.grey.shade700,
                   size: 19,
                 ),
               ),

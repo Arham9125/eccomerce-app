@@ -3,7 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:focused_menu/focused_menu.dart';
+import 'package:focused_menu/modals.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:project/cart.dart';
 import 'package:project/main.dart';
 import 'package:project/widgets/homewidget.dart';
 import 'package:project/widgets/textwidget.dart';
@@ -111,16 +114,41 @@ class _Screen1 extends State<Screen1> {
                     mainAxisSpacing: 150),
                 itemBuilder: (context, index) => Wrap(children: [
                       GestureDetector(
-                        onTap: () {},
-                        child: Card(
-                          elevation: 8,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          child: Container(
-                            child: Column(
-                              children: [
-                                Container(child: tasweer[index]),
-                              ],
+                        onDoubleTap: () {
+                          showModalBottomSheet(
+                              context: context, builder: (context) => Cart());
+                        },
+                        child: FocusedMenuHolder(
+                          onPressed: () {},
+                          menuItems: [
+                            FocusedMenuItem(
+                                title: Text("Open"),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Cart()));
+                                }),
+                            FocusedMenuItem(
+                                title: Text("Share"),
+                                onPressed: () {
+                                  showBottomSheet(
+                                      context: context,
+                                      builder: (context) => Cart());
+                                }),
+                            FocusedMenuItem(
+                                title: Text("Remove"), onPressed: () {}),
+                          ],
+                          child: Card(
+                            elevation: 8,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Container(child: tasweer[index]),
+                                ],
+                              ),
                             ),
                           ),
                         ),

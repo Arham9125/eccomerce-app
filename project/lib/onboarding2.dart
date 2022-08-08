@@ -3,7 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:project/signup.dart';
-import 'package:project/onboarding.dart';
+import 'package:project/onboarding-img.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:onboarding/onboarding.dart';

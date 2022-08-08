@@ -71,8 +71,9 @@ class BigBtext extends StatelessWidget {
 class Smalltextc extends StatelessWidget {
   String text;
   double size;
+  dynamic clr;
 
-  Smalltextc({required this.text, required this.size});
+  Smalltextc({required this.text, required this.size, required this.clr});
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +81,34 @@ class Smalltextc extends StatelessWidget {
       text,
       style: GoogleFonts.raleway(
           textStyle: TextStyle(
-              color: Colors.grey.shade700,
-              fontWeight: FontWeight.w400,
-              fontSize: size)),
+              color: clr, fontWeight: FontWeight.w400, fontSize: size)),
     );
   }
 }
+
+textwidget(String text, dynamic clr, double size, dynamic weight) {
+  return Text(
+    text,
+    style: GoogleFonts.raleway(
+        textStyle: TextStyle(color: clr, fontWeight: weight, fontSize: size)),
+  );
+}
+
+// class test extends StatelessWidget {
+//   String text;
+//   bool? change;
+//   double size;
+//   dynamic clr;
+
+//   test({required this.text, required this.size, required this.clr});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       change == null ? "khan" : text,
+//       style: GoogleFonts.raleway(
+//           textStyle: TextStyle(
+//               color: clr, fontWeight: FontWeight.w400, fontSize: size)),
+//     );
+//   }
+// }
